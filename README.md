@@ -1,8 +1,7 @@
 # RACE Dataset Analysis - NLP Project
 
-![GitHub](https://img.shields.io/github/license/yourusername/race-nlp-analysis)
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Python](https://img.shields.io/badge/python-v3.8+-blue.svg)
-![Last Commit](https://img.shields.io/github/last-commit/yourusername/race-nlp-analysis)
 
 This repository contains analysis of the Reading Comprehension from Examinations (RACE) dataset, a large-scale reading comprehension dataset collected from English examinations in China for middle and high school students.
 
@@ -20,7 +19,7 @@ This project explores the dataset through:
 2. Implementation of multiple models (baseline and BERT-based)
 3. Comparison of model performance
 4. Interactive search capabilities
-5. Ready-to-use helper scripts for dataset handling
+5. End-to-end analysis in Jupyter notebooks
 
 ## Overview
 
@@ -40,29 +39,21 @@ The analysis includes:
 
 ## Repository Structure
 
-### Main Files
+### Repository Files
 
-- `RACE_Analysis.ipynb`: Main Jupyter notebook containing all analysis and code
-- `NLP_Project.ipynb`: Preliminary analysis notebook
+- `RACE_Analysis.ipynb`: Main Jupyter notebook containing comprehensive analysis and models
+- `NLP_Project.ipynb`: Preliminary analysis notebook with additional NLP techniques
 - `requirements.txt`: Python package dependencies
 - `.gitignore`: Standard file to exclude unnecessary files from Git
 - `LICENSE`: MIT license file
-
-### Helper Scripts
-
-- `data_utils.py`: Utility functions for loading and processing the RACE dataset
-- `train_models.py`: Script for training baseline and BERT models on the RACE dataset
-- `inference.py`: Script for making predictions with trained models
-- `STRUCTURE.md`: Detailed description of the project structure
-- `CONTRIBUTING.md`: Guidelines for contributing to the project
 
 ## Setup and Installation
 
 1. Clone this repository:
 
 ```bash
-git clone https://github.com/yourusername/race-nlp-analysis.git
-cd race-nlp-analysis
+git clone https://github.com/[your-username]/race-dataset-analysis.git
+cd race-dataset-analysis
 ```
 
 2. Create a virtual environment (recommended):
@@ -93,67 +84,16 @@ jupyter notebook RACE_Analysis.ipynb
 
 The notebook will automatically download the RACE dataset using the Hugging Face datasets library.
 
-### Helper Scripts
+### Working with the Notebooks
 
-You can also use the provided helper scripts to work with the dataset and models:
+The Jupyter notebooks contain all the necessary code to:
 
-#### Loading the Dataset
+1. Download and prepare the RACE dataset
+2. Perform exploratory data analysis
+3. Build and evaluate machine learning models
+4. Visualize results
 
-```python
-from data_utils import load_race_dataset, convert_to_dataframe
-
-# Load the dataset
-dataset = load_race_dataset()
-
-# Convert to DataFrame
-train_df = convert_to_dataframe(dataset['train'])
-val_df = convert_to_dataframe(dataset['validation'])
-test_df = convert_to_dataframe(dataset['test'])
-```
-
-#### Training Models
-
-To train a baseline model (TF-IDF + Logistic Regression):
-
-```bash
-python train_models.py --model_type baseline --output_dir models
-```
-
-To train a BERT model:
-
-```bash
-python train_models.py --model_type bert --output_dir models --epochs 3
-```
-
-For faster testing with a smaller sample:
-
-```bash
-python train_models.py --model_type both --sample_size 1000
-```
-
-#### Making Predictions
-
-Using the baseline model:
-
-```bash
-python inference.py --model_type baseline \
-  --model_path models/baseline_model.pkl \
-  --vectorizer_path models/tfidf_vectorizer.pkl \
-  --article_file example_article.txt \
-  --question "What is the main idea of the passage?" \
-  --options "Option A" "Option B" "Option C" "Option D"
-```
-
-Using the BERT model:
-
-```bash
-python inference.py --model_type bert \
-  --model_path models/bert \
-  --article_file example_article.txt \
-  --question "What is the main idea of the passage?" \
-  --options "Option A" "Option B" "Option C" "Option D" \
-  --cuda
-```
+All analyses are self-contained in the notebooks, making them easy to understand and reproduce.
 
 ## Dataset
 

@@ -1,0 +1,27 @@
+name: Notebook Validation
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install nbconvert nbformat jupyter
+          pip install -r requirements.txt
+      - name: Validate notebooks
+        run: |
+          python -c "import nbformat; nbformat.validate(nbformat.read(open('RACE_Analysis.ipynb'), as_version=4))"
+          python -c "import nbformat; nbformat.validate(nbformat.read(open('NLP_Project.ipynb'), as_version=4))"
+        continue-on-error: true
