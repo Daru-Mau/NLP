@@ -1,0 +1,95 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+# Explicitly exclude virtual environment for this project
+nlp_venv/
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Project specific
+*.parquet
+*.csv
+*.tsv
+.DS_Store
+api_keys.txt
+*config.ini
+
+# OpenAI API
+openai.key
+
+# Additional virtual environment exclusions
+nlp_venv/**/*.dll
+nlp_venv/**/*.exe
+nlp_venv/**/*.pyd
+nlp_venv/**/*.pyc
+nlp_venv/**/*.pth
+nlp_venv/**/*.whl
+# Cache files
+.ruff_cache/
+__pypackages__/
